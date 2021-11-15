@@ -36,7 +36,8 @@ void EasyDDNSClass::update(unsigned long ddns_update_interval, bool use_local_ip
       // ######## GET PUBLIC IP ######## //
       WiFiClient client;
       HTTPClient http;
-      http.begin(client, "http://ipv4bot.whatismyipaddress.com/");
+      //http.begin(client, "http://ipv4bot.whatismyipaddress.com/");
+      http.begin(client, "http://api.ipify.org/");
       int httpCode = http.GET();
       if (httpCode > 0) {
         if (httpCode == HTTP_CODE_OK) {
